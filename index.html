@@ -211,6 +211,59 @@
     </div>
     <div class="dot-nav" id="dotNav" aria-label="Slide navigation"></div>
   </div>
+  <template id="slide-template-welcome">
+<style>
+  * { box-sizing: border-box; }
+  .grain{position:absolute;inset:0;mix-blend-mode:overlay;opacity:.10;pointer-events:none;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px;}
+  .pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E9164E;border:1px solid #E9164E;border-radius:4px;padding:5px 12px;margin-bottom:20px;}
+  .ff{font-family:'Fraunces',serif;}
+  .cm{position:absolute;width:32px;height:32px;z-index:5;}
+  .cm svg{width:32px;height:32px;}
+  .welcome-line{transform:scaleX(0);transform-origin:left center;animation:welcomeLine 1.2s cubic-bezier(0.22,1,0.36,1) .35s forwards;}
+  .welcome-copy{opacity:0;transform:translateY(18px);animation:welcomeUp .9s cubic-bezier(0.22,1,0.36,1) .55s forwards;}
+  .welcome-logo{opacity:0;transform:translateY(-12px);animation:welcomeDown .9s cubic-bezier(0.22,1,0.36,1) .2s forwards;}
+  @keyframes welcomeLine{to{transform:scaleX(1);}}
+  @keyframes welcomeUp{to{opacity:1;transform:translateY(0);}}
+  @keyframes welcomeDown{to{opacity:1;transform:translateY(0);}}
+</style>
+<div style="width:1920px;height:1080px;overflow:hidden;position:relative;font-family:'Poppins',sans-serif;background:#013B68;">
+  <div style="position:absolute;top:0;left:1130px;right:0;bottom:0;background:#FFFFFF;z-index:0;overflow:hidden;">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="welcome-dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="0" cy="0" r="1.5" fill="rgba(1,59,104,0.12)"/></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#welcome-dots)"/>
+    </svg>
+    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(to bottom,#E9164E 0%,#F59E0B 25%,#6366F1 55%,#0891B2 80%,#E9164E 100%);z-index:2;"></div>
+    <svg style="position:absolute;bottom:-60px;right:-60px;width:260px;height:260px;opacity:0.12;pointer-events:none;" viewBox="0 0 260 260">
+      <circle cx="130" cy="130" r="120" fill="none" stroke="#013B68" stroke-width="1" stroke-dasharray="4,8"/>
+      <circle cx="130" cy="130" r="90" fill="none" stroke="#E9164E" stroke-width="1.5"/>
+      <circle cx="130" cy="130" r="60" fill="none" stroke="#6366F1" stroke-width="1" stroke-dasharray="2,4"/>
+      <circle cx="130" cy="130" r="30" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div class="grain" style="right:800px;"></div>
+  <div class="cm" style="top:28px;left:28px;"><svg viewBox="0 0 32 32" fill="none"><polyline points="32,2 2,2 2,32" stroke="rgba(255,255,255,0.28)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="cm" style="top:28px;right:28px;transform:rotate(90deg);"><svg viewBox="0 0 32 32" fill="none"><polyline points="32,2 2,2 2,32" stroke="rgba(1,59,104,0.35)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="cm" style="bottom:28px;right:28px;transform:rotate(180deg);"><svg viewBox="0 0 32 32" fill="none"><polyline points="32,2 2,2 2,32" stroke="rgba(1,59,104,0.35)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="cm" style="bottom:28px;left:28px;transform:rotate(270deg);"><svg viewBox="0 0 32 32" fill="none"><polyline points="32,2 2,2 2,32" stroke="rgba(255,255,255,0.28)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <img src="assets/redcliffe_logo_white_on_crimson.png" class="welcome-logo" style="position:absolute;top:72px;right:150px;height:84px;max-width:300px;object-fit:contain;z-index:4;border-radius:10px;box-shadow:0 8px 28px rgba(233,22,78,0.35);" alt="Redcliffe Labs" />
+  <div style="position:absolute;top:230px;left:80px;width:1040px;z-index:3;">
+    <div class="welcome-copy" style="margin-bottom:10px;"><span class="pill">Welcome</span></div>
+    <div class="ff welcome-copy" style="font-size:84px;font-weight:800;line-height:0.98;letter-spacing:-2px;color:#FFFFFF;animation-delay:.68s;">Welcome to <span style="color:#E9164E;">Redcliffe Labs</span></div>
+    <div class="welcome-line" style="width:92px;height:4px;background:#E9164E;margin-top:28px;"></div>
+  </div>
+  <div class="welcome-copy" style="position:absolute;top:330px;left:1210px;width:560px;z-index:3;animation-delay:.86s;">
+    <div style="color:#013B68;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;">Honoured Guest</div>
+    <div class="ff" style="color:#013B68;font-size:44px;font-weight:800;line-height:1.06;margin-bottom:18px;">Ed Jager</div>
+    <div style="color:#E9164E;font-size:20px;font-weight:700;line-height:1.35;margin-bottom:22px;">Eelco Hendrik Jager</div>
+    <div style="width:80px;height:4px;background:#E9164E;margin-bottom:26px;"></div>
+    <div style="color:#1E3A5F;font-size:25px;font-weight:500;line-height:1.45;">Minister (Commercial) at the High Commission of Canada in New Delhi</div>
+  </div>
+  <div style="position:absolute;bottom:84px;left:80px;z-index:3;display:flex;align-items:center;gap:14px;">
+    <div style="width:4px;height:42px;background:#E9164E;border-radius:2px;"></div>
+    <div><div style="color:rgba(255,255,255,0.45);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Presented by</div><div style="color:#FFFFFF;font-size:15px;font-weight:600;line-height:1.3;">Redcliffe Labs</div></div>
+  </div>
+</div>
+  </template>
   <template id="slide-template-1">
 <style>
 
@@ -2045,6 +2098,7 @@
   </template>
   <script>
     const slides = [
+      { title: 'Welcome to Redcliffe Labs', templateId: 'slide-template-welcome' },
       { title: 'The Insight That Started Everything', templateId: 'slide-template-1' },
       { title: 'Scale & Reach', templateId: 'slide-template-3' },
       { title: 'Built Different. For a Sick India.', templateId: 'slide-template-2' },
@@ -2834,13 +2888,13 @@
     }
 
     function enhanceSlide(index, root) {
-      if (index === 0) enhanceSlide1(root);
-      if (index === 1) enhanceSlide3(root);
-      if (index === 2) enhanceSlide2(root);
-      if (index === 3) enhanceSlide4(root);
-      if (index === 4) enhanceSlide5(root);
-      if (index === 5) enhanceSlide6(root);
-      if (index === 6) enhanceSlide7(root);
+      if (index === 1) enhanceSlide1(root);
+      if (index === 2) enhanceSlide3(root);
+      if (index === 3) enhanceSlide2(root);
+      if (index === 4) enhanceSlide4(root);
+      if (index === 5) enhanceSlide5(root);
+      if (index === 6) enhanceSlide6(root);
+      if (index === 7) enhanceSlide7(root);
     }
 
     function buildDeck() {
